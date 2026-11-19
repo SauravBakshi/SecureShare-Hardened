@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SecureShare — Create a new account to start sharing files securely.">
+  <title>SecureShare — Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-page">
+
+    <!-- Left Branding Panel -->
+    <div class="auth-left">
+      <div class="auth-logo">
+        <div class="auth-logo-icon">🔒</div>
+        <div class="auth-logo-text">
+          SecureShare
+          <span>Secure File Platform</span>
+        </div>
+      </div>
+
+      <h1 class="auth-headline">Join the Secure<br>File Network</h1>
+      <p class="auth-tagline">Create your account and start sharing files securely with your team today.</p>
+
+      <div class="auth-features">
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">🚀</div>
+          <div class="auth-feature-text">
+            <strong>Instant Access</strong>
+            <span>Upload and share files immediately after sign-up</span>
+          </div>
+        </div>
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">🔗</div>
+          <div class="auth-feature-text">
+            <strong>Easy Sharing</strong>
+            <span>Share files with READ or WRITE permissions</span>
+          </div>
+        </div>
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">📊</div>
+          <div class="auth-feature-text">
+            <strong>Security Dashboard</strong>
+            <span>Monitor all activity and access events</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Register Form -->
+    <div class="auth-right">
+      <div class="auth-card">
+        <h2 class="auth-card-title">Create Account</h2>
+        <p class="auth-card-subtitle">Fill in the details below to get started</p>
+
+        <div id="register-error" class="form-error"></div>
+        <div id="register-success" class="form-success"></div>
+
+        <form id="register-form" autocomplete="on">
+          <div class="form-group">
+            <label class="form-label" for="reg-username">Username</label>
+            <input id="reg-username" class="form-control" type="text" name="username" required
+              placeholder="Choose a username" minlength="3" maxlength="50" autocomplete="username">
+            <div class="form-hint">3–50 characters</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email Address</label>
+            <input id="reg-email" class="form-control" type="email" name="email" required
+              placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Password</label>
+            <input id="reg-password" class="form-control" type="password" name="password" required
+              placeholder="Use 12 or more characters" minlength="12" maxlength="72" autocomplete="new-password">
+            <div class="form-hint">Minimum 12 characters</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-confirm">Confirm Password</label>
+            <input id="reg-confirm" class="form-control" type="password" name="confirm_password" required
+              placeholder="••••••••" autocomplete="new-password">
+          </div>
+
+          <button type="submit" id="register-btn" class="btn btn-primary btn-lg" style="width:100%; margin-top:0.5rem;">
+            Create Account
+          </button>
+        </form>
+
+        <p class="auth-footer-text">
+          Already have an account? <a href="login.html" class="auth-link">Sign in here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

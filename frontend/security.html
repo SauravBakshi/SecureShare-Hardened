@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureShare - Security Activity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="with-sidebar">
+    <div id="sidebar-container"></div>
+    
+    <div class="main-content" style="flex:1;">
+      <div class="page-header" style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>Security Activity</h1>
+        <select id="risk-filter" style="width: 200px;">
+          <option value="ALL">All Risk Levels</option>
+          <option value="LOW">Low Risk</option>
+          <option value="MEDIUM">Medium Risk</option>
+          <option value="HIGH">High Risk</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Action</th>
+                <th>IP Address</th>
+                <th>Result</th>
+                <th>Risk Level</th>
+              </tr>
+            </thead>
+            <tbody id="security-table-body">
+              <tr><td colspan="5" style="text-align:center;"><span class="spinner"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/security.js"></script>
+</body>
+</html>

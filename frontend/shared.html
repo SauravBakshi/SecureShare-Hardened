@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureShare - Shared Files</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="with-sidebar">
+    <div id="sidebar-container"></div>
+    
+    <div class="main-content" style="flex:1;">
+      <div class="page-header">
+        <h1>Shared With Me</h1>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>File ID</th>
+                <th>Permission</th>
+                <th>Shared Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="shared-table-body">
+              <tr><td colspan="4" style="text-align:center;"><span class="spinner"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

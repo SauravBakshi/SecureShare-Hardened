@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureShare - Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="with-sidebar">
+    <div id="sidebar-container"></div>
+    
+    <div class="main-content" style="flex:1;" id="admin-content">
+      <div class="page-header">
+        <h1>Admin Dashboard</h1>
+      </div>
+
+      <div class="grid-4" style="margin-bottom: 2rem;">
+        <div class="card stat-card">
+          <div><div class="stat-label">Total Users</div><div class="stat-value" id="admin-users">-</div></div>
+        </div>
+        <div class="card stat-card purple-border">
+          <div><div class="stat-label">Total Files</div><div class="stat-value" id="admin-files">-</div></div>
+        </div>
+        <div class="card stat-card">
+          <div><div class="stat-label">Active Shares</div><div class="stat-value" id="admin-shares">-</div></div>
+        </div>
+        <div class="card stat-card purple-border">
+          <div><div class="stat-label">Security Events</div><div class="stat-value" id="admin-events">-</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>System-Wide Security Events</h3>
+        <div style="overflow-x: auto; margin-top: 1rem;">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>User ID</th>
+                <th>Action</th>
+                <th>Result</th>
+                <th>IP</th>
+              </tr>
+            </thead>
+            <tbody id="admin-table-body">
+              <tr><td colspan="5" style="text-align:center;"><span class="spinner"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="main-content" style="flex:1; display:none;" id="access-denied">
+      <div class="card" style="text-align:center; padding: 4rem;">
+        <div style="font-size:4rem; margin-bottom:1rem;">⛔</div>
+        <h2 style="color:var(--danger); margin-bottom:1rem;">Access Denied</h2>
+        <p style="color:var(--text-muted);">You do not have administrative privileges to view this page.</p>
+        <a href="dashboard.html" class="btn btn-primary" style="margin-top:2rem;">Return to Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

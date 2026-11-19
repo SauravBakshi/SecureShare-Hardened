@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SecureShare Dashboard — Overview of your files, shared content, and security activity.">
+  <title>SecureShare — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Welcome back, <span id="welcome-name">...</span></p>
+        </div>
+        <div class="page-header-actions">
+          <a href="upload.html" class="btn btn-primary">⬆️ Upload File</a>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="grid-4 mb-4">
+        <div class="card stat-card">
+          <div class="stat-header">
+            <div>
+              <div class="stat-label">Total Files</div>
+              <div class="stat-value" id="stat-total-files"><span class="spinner"></span></div>
+            </div>
+            <div class="stat-icon">📁</div>
+          </div>
+        </div>
+        <div class="card stat-card purple">
+          <div class="stat-header">
+            <div>
+              <div class="stat-label">My Files</div>
+              <div class="stat-value" id="stat-my-files"><span class="spinner"></span></div>
+            </div>
+            <div class="stat-icon">🗂️</div>
+          </div>
+        </div>
+        <div class="card stat-card success">
+          <div class="stat-header">
+            <div>
+              <div class="stat-label">Shared With Me</div>
+              <div class="stat-value" id="stat-shared-files"><span class="spinner"></span></div>
+            </div>
+            <div class="stat-icon">🔗</div>
+          </div>
+        </div>
+        <div class="card stat-card warning">
+          <div class="stat-header">
+            <div>
+              <div class="stat-label">Security Events</div>
+              <div class="stat-value" id="stat-security-events"><span class="spinner"></span></div>
+            </div>
+            <div class="stat-icon">🛡️</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-column grid -->
+      <div class="grid-2">
+        <!-- Left column -->
+        <div>
+          <!-- Account Info -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <span class="card-title">Account Information</span>
+              <a href="profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:0.9rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="avatar avatar-lg" id="acc-avatar">?</div>
+                <div>
+                  <div style="font-size:1.1rem; font-weight:600;" id="acc-username">—</div>
+                  <div style="color:var(--text-muted); font-size:0.8rem;" id="acc-email">—</div>
+                  <div style="margin-top:0.35rem;"><span class="badge" id="acc-role-badge">—</span></div>
+                </div>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:0.5rem;">
+                <div style="padding:0.75rem; background:rgba(0,212,255,0.04); border:1px solid var(--border); border-radius:8px; text-align:center;">
+                  <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Status</div>
+                  <div style="margin-top:0.25rem;"><span class="badge badge-success">🟢 Active</span></div>
+                </div>
+                <div style="padding:0.75rem; background:rgba(124,58,237,0.04); border:1px solid var(--border); border-radius:8px; text-align:center;">
+                  <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Encryption</div>
+                  <div style="margin-top:0.25rem;"><span class="badge badge-warning">Phase 2</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Quick Actions</span>
+            </div>
+            <div class="grid-3">
+              <a href="upload.html" class="quick-action-btn">
+                <span class="quick-action-icon">⬆️</span>
+                Upload File
+              </a>
+              <a href="files.html" class="quick-action-btn">
+                <span class="quick-action-icon">📁</span>
+                My Files
+              </a>
+              <a href="shared.html" class="quick-action-btn">
+                <span class="quick-action-icon">🔗</span>
+                Shared Files
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Recent Activity -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Recent Security Activity</span>
+            <a href="security.html" class="btn btn-ghost btn-sm">View All</a>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Action</th>
+                  <th>Result</th>
+                  <th>Risk</th>
+                </tr>
+              </thead>
+              <tbody id="activity-table-body">
+                <tr class="loading-row"><td colspan="4"><span class="spinner"></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
